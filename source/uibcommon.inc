@@ -778,6 +778,21 @@
       {$UNDEF UNKNOWN_COMPILER_VERSION}
     {$endif VER260}
 
+    {$ifdef VER300}
+      {$DEFINE BDS}
+      {$DEFINE BDS8}
+      {$DEFINE COMPILER18}
+      {$IFDEF BCB}
+        {$DEFINE BCB15}
+      {$ELSE}
+        {$DEFINE DELPHI19}
+        {$DEFINE DELPHI2015} // synonym to DELPHI18
+        {$DEFINE DELPHICOMPILER19}
+      {$ENDIF BCB}
+      {$DEFINE RTL260_UP}
+      {$UNDEF UNKNOWN_COMPILER_VERSION}
+    {$endif VER300}
+
     {$IFDEF UNKNOWN_COMPILER_VERSION} // adjust for newer version (always use latest version)
       {$DEFINE BDS}
       {$DEFINE BDS7}
